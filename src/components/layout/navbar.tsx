@@ -1,36 +1,77 @@
+"use client";
+
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+
+import Button from "@/src/components/ui/button";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Blogs", href: "/blogs" },
+  { label: "Downloads", href: "/downloads" },
   { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
       <div className="container-custom flex items-center justify-between py-4">
         <Link
           href="/"
-          className="text-2xl font-bold text-green-700"
+          className="text-2xl font-bold tracking-tight text-green-700"
         >
           Ayurveda Tantran
         </Link>
 
-        <nav className="hidden gap-6 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-medium hover:text-green-700"
+              className="text-sm font-medium text-gray-700 transition hover:text-green-700"
             >
               {link.label}
             </Link>
           ))}
+
+          <Button>
+            Appointment
+          </Button>
         </nav>
+
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden"
+        >
+          {isOpen ? <X /> : <Menu />}
+        </button>
       </div>
+
+      {isOpen && (
+        <div className="border-t bg-white md:hidden">
+          <div className="container-custom flex flex-col gap-5 py-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-medium text-gray-700"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <Button className="w-full">
+              Appointment
+            </Button>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

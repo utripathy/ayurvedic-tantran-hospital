@@ -3,17 +3,21 @@ import { heroData } from "@/src/data/home";
 
 export default function HeroSection() {
   return (
-    <section className="bg-green-800 text-white">
-      <div className="container-custom py-28 text-center">
-        <h1 className="text-5xl font-bold leading-tight md:text-7xl">
+    <section className="relative overflow-hidden bg-gradient-to-b from-green-900 to-green-700 text-white">
+      <div className="container-custom py-32 text-center">
+        <span className="rounded-full border border-white/20 px-5 py-2 text-sm">
+          Trusted Ayurvedic Healthcare
+        </span>
+
+        <h1 className="mx-auto mt-8 max-w-5xl text-5xl font-bold leading-tight md:text-7xl">
           {heroData.title}
         </h1>
 
-        <p className="mx-auto mt-6 max-w-3xl text-lg">
+        <p className="mx-auto mt-8 max-w-3xl text-lg text-green-50">
           {heroData.subtitle}
         </p>
 
-        <div className="mt-10 flex justify-center gap-4">
+        <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
           <Button>
             Book Appointment
           </Button>

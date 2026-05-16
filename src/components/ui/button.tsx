@@ -15,12 +15,12 @@ export default function Button({
   return (
     <button
       className={clsx(
-        "rounded-2xl px-6 py-3 font-semibold transition",
+        "rounded-full px-7 py-3 text-sm font-semibold transition-all duration-300",
         {
           "bg-green-700 text-white hover:bg-green-800":
             variant === "primary",
 
-          "border border-green-700 text-green-700 hover:bg-green-50":
+          "border border-green-700 bg-white text-green-700 hover:bg-green-50":
             variant === "secondary",
         },
         className

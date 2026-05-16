@@ -26,7 +26,7 @@ export const doctors = [
   {
     slug: "dr-sasmita",
 
-    name: "Dr. Sasmita tripathy",
+    name: "Dr. Sasmita Tripathy",
 
     designation:
       "Skin & Wellness Expert",

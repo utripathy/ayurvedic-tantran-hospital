@@ -1,21 +1,20 @@
 import SectionHeading from "@/src/components/ui/section-heading";
-import { servicesPreview } from "@/src/data/home";
-
+import { servicesData } from "@/src/data/home";
 
 export default function ServicesPreview() {
   return (
-    <section className="py-20">
+    <section className="bg-white py-20">
       <div className="container-custom">
         <SectionHeading
           title="Our Services"
-          subtitle="Holistic Ayurvedic therapies for complete wellness."
+          subtitle="Holistic Ayurvedic therapies designed for complete wellness."
         />
 
         <div className="grid gap-6 md:grid-cols-3">
-          {servicesPreview.map((service) => (
+          {servicesData.map((service) => (
             <div
               key={service.title}
-              className="rounded-3xl bg-white p-8 shadow-sm"
+              className="rounded-3xl border bg-[#f8f5f0] p-8 transition hover:-translate-y-2"
             >
               <h3 className="text-2xl font-semibold text-green-700">
                 {service.title}

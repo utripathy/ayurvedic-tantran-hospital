@@ -13,7 +13,7 @@ export default function ServiceCard({
 }: Props) {
   return (
     <Link href={`/services/${slug}`}>
-      <div className="rounded-3xl bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+      <div className="soft-shadow rounded-[2rem] bg-white p-8 transition-all duration-500 hover:-translate-y-3">
         <h3 className="text-2xl font-semibold text-green-700">
           {title}
         </h3>

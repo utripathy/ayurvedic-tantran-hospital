@@ -1,5 +1,6 @@
 import Button from "@/src/components/ui/button";
 import { heroData } from "@/src/data/home";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -25,6 +26,16 @@ export default function HeroSection() {
           <Button variant="secondary">
             Explore Services
           </Button>
+        </div>
+        <div className="mt-20">
+          <Image
+            src="/images/hero.png"
+            alt="Ayurveda Tantran Hospital"
+            width={1000}
+            height={600}
+            priority
+            className="mx-auto rounded-[2rem] object-cover shadow-2xl"
+          />
         </div>
       </div>
     </section>

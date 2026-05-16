@@ -19,11 +19,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur-md">
-      <div className="container-custom flex items-center justify-between py-4">
+    <header className="glass-effect sticky top-0 z-50 border-b border-white/20">
+      <div className="container-custom flex items-center justify-between py-5">
         <Link
           href="/"
-          className="text-2xl font-bold tracking-tight text-green-700"
+          className="relative text-sm font-large text-gray-700 transition-all duration-300 hover:text-green-800"
         >
           Ayurveda Tantran
         </Link>
@@ -39,9 +39,11 @@ export default function Navbar() {
             </Link>
           ))}
 
-          <Button>
-            Appointment
-          </Button>
+          <Link href="/appointments">
+            <Button>
+              Appointment
+            </Button>
+          </Link>
         </nav>
 
         <button
@@ -66,9 +68,11 @@ export default function Navbar() {
               </Link>
             ))}
 
-            <Button className="w-full">
-              Appointment
-            </Button>
+            <Link href="/appointments">
+              <Button>
+                Appointment
+              </Button>
+            </Link>
           </div>
         </div>
       )}

@@ -2,6 +2,7 @@
 
 import Footer from "@/src/components/layout/footer";
 import Navbar from "@/src/components/layout/navbar";
+import BlogCard from "@/src/components/ui/blog-card";
 import PageHero from "@/src/components/ui/page-hero";
 import { blogs } from "@/src/data/blogs";
 import type { Metadata } from "next";
@@ -25,19 +26,13 @@ export default function BlogsPage() {
       <section className="py-20">
         <div className="container-custom grid gap-6 md:grid-cols-2">
           {blogs.map((blog) => (
-            <div
-              key={blog.slug}
-              className="rounded-3xl bg-white p-8 shadow-sm"
-            >
-              <h3 className="text-2xl font-semibold">
-                {blog.title}
-              </h3>
-
-              <p className="mt-4 text-gray-600">
-                {blog.excerpt}
-              </p>
-            </div>
-          ))}
+    <BlogCard
+      key={blog.slug}
+      slug={blog.slug}
+      title={blog.title}
+      excerpt={blog.excerpt}
+    />
+  ))}
         </div>
       </section>
 
